@@ -44,7 +44,6 @@ const puppeteer = require('puppeteer-extra');
             items.push({title, price, img});
         }
     }
-    console.log(items);
-    console.log(items.length)
+    console.log(items, items.length);
 
 })();
