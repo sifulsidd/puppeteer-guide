@@ -4,11 +4,14 @@ const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.use(StealthPlugin());
 
-async function run(){
-    const browser = await puppeteer.launch({headless: false});
+
+(async () => {
+    const browser = await puppeteer.launch({
+        headless: false
+    });
     const page = await browser.newPage();
     await page.goto("https://fill.dev/form/credit-card-simple");
-
+    await page.screenshot({path: 'example.png'});
     let selector = "input[id='cc-name']";
     await page.waitForSelector(selector);
     await page.type(selector, "Siful Siddiki");
@@ -31,6 +34,5 @@ async function run(){
     selector = "button[type='submit']";
     await page.click(selector);
 
-};
-
-run();
+    await browser.close();
+})();
