@@ -1,5 +1,5 @@
 const puppeteer = require("puppeteer-extra");
-
+const fs = require("fs");
 // // add stealth plugin and use defaults (all evasion techniques)
 // const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 // puppeteer.use(StealthPlugin());
@@ -22,7 +22,7 @@ const puppeteer = require("puppeteer-extra");
   const items = [];
   let isBtnDisabled = false;
   while (!isBtnDisabled) {
-    // basically as long as the page loads it takes any information it can 
+    // basically as long as the page loads it takes any information it can
     // wait for the next button to load
     await page.waitForSelector(
       "span.s-pagination-strip > .s-pagination-item.s-pagination-next"
@@ -62,9 +62,17 @@ const puppeteer = require("puppeteer-extra");
       // by not setting values, it is taking the word we put in as the key and the result it gets from above as the value
       if (title !== "Nothing") {
         items.push({ title, price, img });
+        fs.appendFile(
+          "results.csv",
+          `${title.replace(/,/g, " ")}, ${price}, ${img}\n`,
+          function (err) {
+            if (err) throw err;
+            console.log("saved");
+          }
+        );
       }
     }
-    console.log(items.length);
+    // console.log(items.length);
 
     // detect if button is disabled
     const is_disabled =
@@ -81,5 +89,7 @@ const puppeteer = require("puppeteer-extra");
       );
     }
   }
-  console.log(items);
+
+  //   console.log(items);
+  await browser.close();
 })();
