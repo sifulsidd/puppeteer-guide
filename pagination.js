@@ -12,12 +12,15 @@ puppeteer.use(StealthPlugin());
     });
     const page = await browser.newPage();
     // waitUntil page is loaded then run is_disabled
-    await page.goto('https://www.amazon.com/s?k=keyboards&page=18', 
-        {waitUntil: 'load'});
+    await page.goto('https://www.amazon.com/s?k=keyboards&page=20', {waitUntil: 'load'});
     
     // detect if button is disabled
-    const is_disabled = await page.$('.s-pagination-item.s-pagination-next.s-pagination-disabled') !== null;
-
+    const is_disabled = await page.$('span.s-pagination-strip > .s-pagination-item.s-pagination-next.s-pagination-disabled') !== null;
+    if(!is_disabled){
+        // had to figure out a path to button that will be true regardless of it is is disabled or not
+        await page.click('span.s-pagination-strip > .s-pagination-item.s-pagination-next');
+        console.log(is_disabled);
+    }
     console.log(is_disabled);
 
 

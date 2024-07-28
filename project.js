@@ -15,7 +15,7 @@ const puppeteer = require('puppeteer-extra');
     });
 
     const page = await browser.newPage();
-    await page.goto('https://www.amazon.com/s?k=keyboards&i=videogames&rh=n%3A468642%2Cp_123%3A2842122&dc&qid=1722136635&rnid=85457740011&ref=sr_nr_p_123_2&ds=v1%3ADCcp2NxpjqspToNEuwQCDnyibErwQz%2FZkzhp68oV%2Bus');
+    await page.goto('https://www.amazon.com/s?k=keyboards&i=videogames&rh=n%3A468642%2Cp_123%3A2842122&dc&qid=1722137101&rnid=85457740011&ref=sr_pg_1');
     
     const items = [];
     const productsHandles = await page.$$('div.s-main-slot.s-result-list.s-search-results.sg-row > .s-result-item');
@@ -45,15 +45,16 @@ const puppeteer = require('puppeteer-extra');
             if(title !== "Nothing"){
                 items.push({title, price, img});
             }
+            
+            await page.waitForSelector('span.s-pagination-strip > .s-pagination-item.s-pagination-next');
             // detect if button is disabled
-            await page.waitForSelector('a.s-pagination-item.s-pagination-next.s-pagination-button.s-pagination-separator', {visible : true});
             const is_disabled = await page.$('span.s-pagination-item.s-pagination-next.s-pagination-disabled') !== null;
-            console.log(is_disabled);
+            console.log("Can we continue T or F:", !is_disabled);
             // assign isBtnDisabled to whether or not the next button exists or not 
             isBtnDisabled = is_disabled;
             // if next button exists, basically click next 
             if(!is_disabled){
-                await page.click('a.s-pagination-item.s-pagination-next.s-pagination-button.s-pagination-separator');
+                await page.click('span.s-pagination-strip > .s-pagination-item.s-pagination-next');
             }
         }
     }
