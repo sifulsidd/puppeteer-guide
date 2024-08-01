@@ -1,5 +1,5 @@
-2024/08/01-12:29:40.686 3303 Reusing MANIFEST /Users/sifulsiddiki/Desktop/puppeteer-guide/tmp/Default/Local Storage/leveldb/MANIFEST-000001
-2024/08/01-12:29:40.688 3303 Recovering log #26
-2024/08/01-12:29:40.696 3303 Level-0 table #29: started
-2024/08/01-12:29:40.697 3303 Level-0 table #29: 124892 bytes OK
-2024/08/01-12:29:40.698 3303 Delete type=0 #26
+2024/08/01-13:40:15.130 2f03 Reusing MANIFEST /Users/sifulsiddiki/Desktop/puppeteer-guide/tmp/Default/Local Storage/leveldb/MANIFEST-000001
+2024/08/01-13:40:15.154 2f03 Recovering log #30
+2024/08/01-13:40:15.168 2f03 Level-0 table #32: started
+2024/08/01-13:40:15.169 2f03 Level-0 table #32: 167513 bytes OK
+2024/08/01-13:40:15.173 2f03 Delete type=0 #30

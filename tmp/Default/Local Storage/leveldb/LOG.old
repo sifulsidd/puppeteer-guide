@@ -1,14 +1,5 @@
-2024/08/01-12:23:24.723 540b Reusing MANIFEST /Users/sifulsiddiki/Desktop/puppeteer-guide/tmp/Default/Local Storage/leveldb/MANIFEST-000001
-2024/08/01-12:23:24.729 540b Recovering log #23
-2024/08/01-12:23:24.734 540b Level-0 table #25: started
-2024/08/01-12:23:24.735 540b Level-0 table #25: 81667 bytes OK
-2024/08/01-12:23:24.736 540b Delete type=0 #23
-2024/08/01-12:23:24.736 5103 Compacting 4@0 + 1@1 files
-2024/08/01-12:23:24.743 5103 Generated table #27@0: 24 keys, 87717 bytes
-2024/08/01-12:23:24.743 5103 Compacted 4@0 + 1@1 files => 87717 bytes
-2024/08/01-12:23:24.743 5103 compacted to: files[ 0 1 0 0 0 0 0 ]
-2024/08/01-12:23:24.743 5103 Delete type=2 #14
-2024/08/01-12:23:24.743 5103 Delete type=2 #16
-2024/08/01-12:23:24.743 5103 Delete type=2 #22
-2024/08/01-12:23:24.743 5103 Delete type=2 #25
-2024/08/01-12:23:24.743 5103 Delete type=2 #19
+2024/08/01-12:29:40.686 3303 Reusing MANIFEST /Users/sifulsiddiki/Desktop/puppeteer-guide/tmp/Default/Local Storage/leveldb/MANIFEST-000001
+2024/08/01-12:29:40.688 3303 Recovering log #26
+2024/08/01-12:29:40.696 3303 Level-0 table #29: started
+2024/08/01-12:29:40.697 3303 Level-0 table #29: 124892 bytes OK
+2024/08/01-12:29:40.698 3303 Delete type=0 #26

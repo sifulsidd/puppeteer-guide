@@ -71,7 +71,7 @@ const urls = [
         if (title !== "Nothing") {
           items.push({ title, price, img });
           fs.appendFile(
-            "results.csv",
+            "clusterResults.csv",
             `${title.replace(/,/g, " ")}, ${price}, ${img}\n`,
             function (err) {
               if (err) throw err;
