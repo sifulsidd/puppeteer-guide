@@ -67,7 +67,7 @@ const fs = require("fs");
           `${title.replace(/,/g, " ")}, ${price}, ${img}\n`,
           function (err) {
             if (err) throw err;
-            console.log("saved");
+            // console.log("saved");
           }
         );
       }
